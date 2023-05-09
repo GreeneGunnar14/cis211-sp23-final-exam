@@ -4,8 +4,8 @@
 	 viewBox="0 0 166 49" style="enable-background:new 0 0 166 49;" xml:space="preserve">
 <style type="text/css">
 	@font-face {
-		font-family: "Raleway";
-		src: url(https://fonts.googleapis.com/css2?family=Raleway:wght@400,700);
+		font-family: Raleway;
+		src: url('../fonts/Raleway-Regular.ttf');
 	}
 	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:rgb(191, 188, 244);}
 	.st1{fill:none;}
