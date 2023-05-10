@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <title> Findr | Like Tindr for file </title>
 
-
+  <script src="scripts/email_validation.js"></script>
 </head>
 <body>
   <div class="container">
@@ -36,10 +36,11 @@
     
       <p>Findr stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
       
-      <form action="get-started" method="post" class="inline-form">
+      <form name="form1" action="#" onsubmit="validate_email1()" method="post" class="inline-form" novalidate>
         <input type="email" name="email" id="email" placeholder="Enter your email...">
         <button type="submit" id="get-started-submit" class="btn">Get Started</button>
       </form>
+      <p id="email1_error">Please check your email</p>
 
     </div>
 
@@ -51,7 +52,8 @@
 
   </div>
 
-  <div class="curve"></div>
+  <div class="desktop-curve"></div>
+  <div class="mobile-curve"></div>
 
   <div class="section-2">
 
@@ -59,9 +61,8 @@
 
       <h2 class="bold">Stay productive, wherever you are</h2>
   
-      <p>Never let location be an issue when accessing your files. Findr has you covered for all of your file storage needs.</p>
+      <p>Never let location be an issue when accessing your files. Findr has you covered for all of your file storage needs.<br><br>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
       
-      <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
       
       <a href="#">See how Findr works <span class="bold">&rArr;</span></a> <!-- Using this code was easier than integrating the svg arrow -->
   
@@ -95,8 +96,11 @@
       
     </div>
 
-    <form action="get-started" method="post" class="block-form">
-      <input type="email" name="email2" id="email2" class="email" id="email2" placeholder="email@example.com">
+    <form name="form2" action="#" onsubmit="validate_email2()" method="post" class="block-form" novalidate>
+      <div id="email2_input">
+        <input type="email" name="email2" id="email2" class="email" id="email2" placeholder="email@example.com">
+        <p id="email2_error">Please check your email</p>
+      </div>
       <button class="btn" type="submit" id="submit2">Get Started For Free</button>
     </form>
 

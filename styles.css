@@ -24,10 +24,28 @@
     gap: 1rem;
 }
 
+#email1_error {
+    padding: 0;
+    padding-top: 5px;
+    color: red;
+    visibility: hidden;
+}
+
+#email2_input {
+    margin-top: 40px;
+    width: 100%
+}
+
+#email2_error {
+    width: 100%;
+    color: red;
+    visibility: hidden;
+}
+
 button[type='submit'] {
     border: none;
     border-radius: 3px;
-    padding: 10px 15px;
+    padding: 15px 30px;
     font-family: var(--raleway);
     font-weight: bold;
     flex-grow: 1;
@@ -37,6 +55,7 @@ button[type='submit'] {
 
 button[type='submit']:hover {
     background-color: var(--light-blue);
+    cursor: pointer;
 }
 
 input[type='email'] {
@@ -45,6 +64,8 @@ input[type='email'] {
     padding: 10px 10px;
     flex-grow: 2;
 }
+
+
 
 .bold {
     font-weight: 700;
@@ -104,9 +125,13 @@ header {
     width: 10.4rem;
 }
 
-.curve {
+.desktop-curve {
     min-height: 100px;
     background-image: url(images/bg-curve-desktop.svg);
+}
+
+.mobile-curve {
+    display: none;
 }
 
 .section-1, .section-2, .section-3, footer{
@@ -118,8 +143,9 @@ header {
     padding-block: 3rem;
 }
 
-.section-1 h2, .section-2 h2, section-3 h2 {
+.section-1 h2, .section-2 h2, .section-3 h2 {
     line-height: 2.0;
+    font-size: 1.75rem;
 }
 
 .section-2 {
@@ -142,19 +168,21 @@ header {
     font-size: 0.86rem;
 }
 
-.text p {
+.text>p {
     padding-block: 1rem;
+    max-width: 80%;
 }
 
 .image {
     display: flex;
     flex-basis: 50%;
     justify-content: center;
+    align-items: center;
 }
 
 .image img {
     max-width: 70%;
-    height: auto;
+    max-height: 300px;
 }
 
 .section-3 {
@@ -167,7 +195,7 @@ header {
 }
 
 .section-3 .text {
-    max-width: 40%;
+    max-width: 55%;
 }
 
 .section-3 form {
@@ -196,6 +224,7 @@ header {
 }
 
 .card p {
+    padding-block: 1rem;
     padding-top: 5px;
     line-height: 2;
 }
@@ -216,12 +245,7 @@ header {
 }
 
 .social-circle:hover {
-    stroke: red;
-}
-
-#facebook:hover {
-    fill:red;
-    stroke: red;
+    stroke: white;
 }
 
 footer {
@@ -245,8 +269,172 @@ footer ul a {
     size: 0.86rem;
 }
 
+footer ul a:hover {
+    color: var(--desaturated-blue)
+}
+
+#col1 p{
+    margin-bottom: 1rem;
+}
+
 #social-links {
     flex-direction: row;
     align-items: baseline;
     gap: 3rem;
+}
+
+@media (max-width: 375px) {
+    header {
+        padding: 0 8%;
+        padding-top: 20px;
+        max-width: 100%;
+        justify-content: space-between;
+    }
+
+    header ul {
+        gap: 0.5rem;
+    }
+    
+    header ul a{
+        font-size: 0.86rem;
+    }
+
+    #logo-img {
+        width: 7rem
+    }
+
+    body {
+        display: block;
+        max-width: 100%;
+    }
+
+    .desktop-curve {
+        display: none;
+    }
+
+    .mobile-curve {
+        display: block;
+        background-image: url(images/bg-curve-mobile.svg);
+        min-height: 50px;
+    }
+
+    .inline-form {
+        flex-direction: column;
+    }
+
+    .section-3 form {
+        gap: 0;
+        margin-bottom: 2rem;
+    }
+
+    .block-form * {
+        width: 100%;
+    }
+
+    .text a {
+        display: block;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-1, .section-2, .section-3 {
+        flex-direction: column-reverse;
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    .section-3 {
+        flex-direction: column;
+    }
+
+    .image {
+        max-width: 100%;
+    }
+
+    footer {
+        max-width: 100%;
+    }
+    
+    .section-1 *, .section-2 *, .section-3 * {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .section-1 .text, .section-2 .text, .section-3 .text {
+        max-width: 100%;
+    }
+
+    .image {
+        margin-block: 20px;
+    }
+
+    .text h2 {
+        margin-block: 20px;
+    }
+
+    .text p {
+        margin-block: 20px;
+    }
+
+    .section-3 * {
+        margin: 0;
+    }
+
+    .section-2 a {
+        justify-self: center;
+    }
+
+    .card {
+        margin: 0;
+        margin-block: 20px;
+        padding: 1rem;
+    }
+
+    .card p {
+        margin: 0;
+    }
+
+    .card img {
+        width: 20px;
+    }
+
+    .card .profile-picture {
+        width: 40px;
+    }
+
+    .card * {
+        margin: 0;
+    }
+
+    .text p {
+        max-width: 100%;
+    }
+
+    .section-1 h2, .section-2 h2, .section-3 h2 {
+        line-height: normal;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .social-icon {
+        width: 3rem
+    }
+
+
+    #social-links {
+        justify-content: center;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    #logo-white {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    footer ul {
+        align-items: start;
+    }
 }
